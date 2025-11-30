@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор ремонта - Визитная карточка</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #293147 0%, #1e2430 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visiting-card {
+            background-color: #1e2430;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #3a435e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visiting-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5d4e6d, #3a435e, #5d4e6d);
+        }
+
+        .logo {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature:hover {
+            background-color: #293147;
+        }
+
+        .feature-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: #5d4e6d;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .feature-text {
+            color: #c0c0c0;
+        }
+
+        .qr-code {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #eee 25%, #fff 25%, #fff 50%, #eee 50%, #eee 75%, #fff 75%);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8em;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .url {
+            background-color: #293147;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            color: #90ee90;
+            border: 1px solid #3a435e;
+            word-break: break-all;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #5d4e6d;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #293147;
+            color: white;
+            border: 1px solid #3a435e;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #6d5e7d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #3a435e;
+        }
+
+        .contact {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #293147;
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .visiting-card {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7em;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="visiting-card">
+        <div class="logo">🧮</div>
+        <h1>Калькулятор Ремонта</h1>
+        <p class="subtitle">Профессиональный расчет материалов для вашего ремонта</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📐</div>
+                <div class="feature-text">Точный расчет обоев, плитки, краски и ламината</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💡</div>
+                <div class="feature-text">Умный учет запасов и особенностей укладки</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-text">Экономия времени и средств на закупке материалов</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div class="feature-text">Адаптирован для всех устройств</div>
+            </div>
+        </div>
+
+        <div class="qr-code">
+            <div class="qr-placeholder">
+                Отсканируйте QR-код<br>для перехода на сайт
+            </div>
+        </div>
+
+        <div class="url">https://mafillly34-spec.github.io/kal-kulator/</div>
+
+        <div class="buttons">
+            <a href="https://mafillly34-spec.github.io/kal-kulator/" class="btn btn-primary" target="_blank">Открыть калькулятор</a>
+            <a href="#" class="btn btn-secondary">Сохранить визитку</a>
+        </div>
+
+        <div class="contact">
+            © 2025 Калькулятор Ремонта. Все права защищены.
+        </div>
+    </div>
+
+    <script>
+        // Скрипт для сохранения визитки как изображения
+        document.querySelector('.btn-secondary').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Для сохранения визитки:\n1. Нажмите Ctrl+P\n2. Выберите "Сохранить как PDF"\n3. Или сделайте скриншот страницы');
+        });
+
+        // Добавляем интерактивность
+        document.querySelectorAll('.feature').forEach(feature => {
+            feature.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+
+        // Автоматическое копирование URL при клике
+        document.querySelector('.url').addEventListener('click', function() {
+            const url = this.textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const originalText = this.textContent;
+                this.textContent = '✓ URL скопирован!';
+                this.style.color = '#90ee90';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.color = '#90ee90';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
